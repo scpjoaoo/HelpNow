@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpNow</title>
+    <link rel="stylesheet" href="css/inistyle.css">
+    <style>
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="menu">
+            <div class="menu-icon"><img src="imagens/logo.png" alt="Logo"></div>
+            <div class="title"><a href="index.html">HELPNOW</a></div>
+            <div class="menu-links">
+                <a href="js/sobre.html">Sobre Nós</a>
+                <a href="#">Saiba Mais</a>
+            </div>
+        </div>
+        <div class="profile-container">
+            <span class="profile-tooltip">Usuário não logado
+                <span class="tooltip-text">Realize seu login para personalizar sua experiência</span>
+            </span>
+            <div class="profile-icon" onmouseover="showMenu()" onmouseout="hideMenu()">
+                <div class="profile-menu" id="profileMenu">
+                    <a href="js/login.html">Entrar / Criar conta</a>
+                    <a href="javascript:void(0);" onclick="aviso()">Minha conta</a>
+                    <a href="#">Lista de Desejos</a>
+                    <a href="#">Pedidos</a>
+                    <a href="#">Registro do produto</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Pesquisar...">
+        <button>Buscar</button>
+    </div>
+    <div class="container">
+        <div class="card">
+            <a href="js/TESTE.php?categoria=Eletricista">
+                <p>Eletricista</p>
+                <img src="imagens/eletricista.png" alt="Eletricista">
+                <div class="details">
+                    <p>
+                        Detalhes sobre o eletricista.
+                    </p>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="js/TESTE.php?categoria=Diarista">
+                <p>Diarista</p>
+                <img src="imagens/diarista.png" alt="Diarista">
+                <div class="details">
+                    <p>Detalhes sobre o diarista.</p>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="js/TESTE.php?categoria=Informática">
+                <p>Técnico de TI</p>
+                <img src="imagens/ti.png" alt="Técnico de TI">
+                <div class="details">
+                    <p>Detalhes sobre o técnico de TI.</p>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="js/TESTE.php">
+                <p>Outros</p>
+                <img src="imagens/outros.png" alt="Outros">
+                <div class="details">
+                    <p>Detalhes sobre outros serviços.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.profile-tooltip').addEventListener('mouseover', function() {
+            document.querySelector('.tooltip-text').style.visibility = 'visible';
+            document.querySelector('.tooltip-text').style.opacity = '1';
+        });
+        document.querySelector('.profile-tooltip').addEventListener('mouseout', function() {
+            document.querySelector('.tooltip-text').style.visibility = 'hidden';
+            document.querySelector('.tooltip-text').style.opacity = '0';
+        });
+        document.querySelector('.profile-icon').addEventListener('mouseover', function() {
+            document.getElementById('profileMenu').style.display = 'block';
+        });
+        document.querySelector('.profile-icon').addEventListener('mouseout', function() {
+            document.getElementById('profileMenu').style.display = 'none';
+        });
+
+        function aviso() {
+            // Função de login - adicione a lógica aqui
+            alert("Você será redirecionado para a tela de login");
+            window.location.href = 'js/login.html';
+        }
+    </script>
+</body>
+</html>
